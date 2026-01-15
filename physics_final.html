@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملخص القوانين</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #2d2d2d;
+            --text-color: #e0e0e0;
+            --border-color: #404040;
+
+            /* ألوان المجموعات لتمييز الذاكرة البصرية */
+            --g1-color: #ff6b6b;
+            /* أحمر - طاقة */
+            --g2-color: #4ecdc4;
+            /* تركواز - جذور */
+            --g3-color: #ffe66d;
+            /* أصفر - تحويلات */
+            --g4-color: #a8e6cf;
+            /* أخضر - جا وجتا */
+            --g5-color: #c7f464;
+            /* ليموني - سطر واحد */
+            --g6-color: #ff8b94;
+            /* بينك - وحوش */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #0d7bf4;
+            display: inline-block;
+            padding-bottom: 10px;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+        }
+
+        /* تصميم عنوان المجموعة */
+        .group-container {
+            margin-bottom: 40px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+        }
+
+        .group-header {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid;
+        }
+
+        .group-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .group-desc {
+            font-size: 0.9em;
+            opacity: 0.9;
+            color: #000;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: right;
+        }
+
+        /* العمود الأول: القانون */
+        td:nth-child(1) {
+            width: 35%;
+            direction: ltr;
+            text-align: center;
+        }
+
+        /* العمود الثاني: الاسم */
+        td:nth-child(2) {
+            width: 25%;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* العمود الثالث: الملاحظة */
+        td:nth-child(3) {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #383838;
+        }
+
+        /* تخصيص الألوان لكل مجموعة */
+        .g1 .group-header {
+            background-color: var(--g1-color);
+            border-color: var(--g1-color);
+        }
+
+        .g1 td:nth-child(1) {
+            color: var(--g1-color);
+        }
+
+        .g2 .group-header {
+            background-color: var(--g2-color);
+            border-color: var(--g2-color);
+        }
+
+        .g2 td:nth-child(1) {
+            color: var(--g2-color);
+        }
+
+        .g3 .group-header {
+            background-color: var(--g3-color);
+            border-color: var(--g3-color);
+        }
+
+        .g3 td:nth-child(1) {
+            color: var(--g3-color);
+        }
+
+        .g3 .group-title {
+            color: #000;
+        }
+
+        .g4 .group-header {
+            background-color: var(--g4-color);
+            border-color: var(--g4-color);
+        }
+
+        .g4 td:nth-child(1) {
+            color: var(--g4-color);
+        }
+
+        .g4 .group-title {
+            color: #000;
+        }
+
+        .g5 .group-header {
+            background-color: var(--g5-color);
+            border-color: var(--g5-color);
+        }
+
+        .g5 td:nth-child(1) {
+            color: var(--g5-color);
+        }
+
+        .g5 .group-title {
+            color: #000;
+        }
+
+        .g6 .group-header {
+            background-color: var(--g6-color);
+            border-color: var(--g6-color);
+        }
+
+        .g6 td:nth-child(1) {
+            color: var(--g6-color);
+        }
+
+        .g6 .group-title {
+            color: #000;
+        }
+
+        mjx-container {
+            font-size: 1.3em !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="group-container g1">
+        <div class="group-header">
+            <span class="group-title">1. الطاقات (3)</span>
+            <span class="group-desc">إسطمبة واحدة: (½ × ثابت × مربع)</span>
+        </div>
+        <table>
+            <tr>
+                <td>$$E = \frac{1}{2} k A^2$$</td>
+                <td>الطاقة الكلية</td>
+                <td>تعتمد على السعة (A)</td>
+            </tr>
+            <tr>
+                <td>$$PE = \frac{1}{2} k x^2$$</td>
+                <td>طاقة الوضع</td>
+                <td>تعتمد على المكان (x)</td>
+            </tr>
+            <tr>
+                <td>$$KE = \frac{1}{2} m v^2$$</td>
+                <td>طاقة الحركة</td>
+                <td>تعتمد على السرعة (v)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="group-container g2">
+        <div class="group-header">
+            <span class="group-title">2. الجذور (6)</span>
+            <span class="group-desc">جذر كبير جواه بسط ومقام (أو طرح)</span>
+        </div>
+        <table>
+            <tr>
+                <td>$$v = \sqrt{\frac{F_T}{\mu}}$$</td>
+                <td>سرعة وتر</td>
+                <td>قوة شد (فوق) وتقل (تحت)</td>
+            </tr>
+            <tr>
+                <td>$$v = \sqrt{\frac{B}{\rho}}$$</td>
+                <td>سرعة سائل</td>
+                <td>مرونة (فوق) وكثافة (تحت)</td>
+            </tr>
+            <tr>
+                <td>$$\omega = \sqrt{\frac{k}{m}}$$</td>
+                <td>سرعة سوسته (زاوية)</td>
+                <td>قوة (فوق) وكتلة (تحت)</td>
+            </tr>
+            <tr>
+                <td>$$T = 2\pi \sqrt{\frac{L}{g}}$$</td>
+                <td>زمن بندول</td>
+                <td>طول (فوق) وجاذبية (تحت) - الوحيد بـ 2π</td>
+            </tr>
+            <tr>
+                <td>$$\omega_d = \omega_n \sqrt{1 - \zeta^2}$$</td>
+                <td>سرعة مضمحلة</td>
+                <td>جذر فيه "طرح" (بتقلل السرعة)</td>
+            </tr>
+            <tr>
+                <td>$$v = \omega \sqrt{A^2 - x^2}$$</td>
+                <td>سرعة لحظية</td>
+                <td>جذر فيه "طرح" (زي المضمحلة)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="group-container g3">
+        <div class="group-header">
+            <span class="group-title">3. 2 باي (2)</span>
+            <span class="group-desc">واحد ضرب وواحد قسمة</span>
+        </div>
+        <table>
+            <tr>
+                <td>$$\omega = 2\pi f$$</td>
+                <td>أوميجا وتردد</td>
+                <td>صحاب (علاقة ضرب)</td>
+            </tr>
+            <tr>
+                <td>$$k = \frac{2\pi}{\lambda}$$</td>
+                <td>عدد موجي</td>
+                <td>عكس بعض (علاقة قسمة)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="group-container g4">
+        <div class="group-header">
+            <span class="group-title">4. المسافه (3)</span>
+            <span class="group-desc">أي "مكان" لازم يبدأ بـ A وينتهي بجا أو جتا</span>
+        </div>
+        <table>
+            <tr>
+                <td>$$x(t) = A \cos(\omega t)$$</td>
+                <td>مكان (سوسته)</td>
+                <td>حركة بسيطة ونظيفة</td>
+            </tr>
+            <tr>
+                <td>$$y(x,t) = A \sin(kx \pm \omega t)$$</td>
+                <td>مكان (موجة)</td>
+                <td>موجة ماشية (فيها k و w)</td>
+            </tr>
+            <tr>
+                <td>$$x(t) = A e^{-\frac{b}{2m}t} \cos(\dots)$$</td>
+                <td>مكان (مضمحل)</td>
+                <td>نفس الأولى بس مضروبة في "E" (بتموت)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="group-container g5">
+        <div class="group-header">
+            <span class="group-title">5. السهلين (4)</span>
+            <span class="group-desc">مباشرين مفيهوش تعقيد</span>
+        </div>
+        <table>
+            <tr>
+                <td>$$F = -kx$$</td>
+                <td>قانون هوك</td>
+                <td>قوة وإزاحة (والسالب للاتجاه)</td>
+            </tr>
+            <tr>
+                <td>$$v = f \lambda$$</td>
+                <td>سرعة الموجة</td>
+                <td>أهم قانون (تردد × طول)</td>
+            </tr>
+            <tr>
+                <td>$$v = 331 + 0.6 T$$</td>
+                <td>سرعة وحرارة</td>
+                <td>جمع وضرب بسيط</td>
+            </tr>
+            <tr>
+                <td>$$\mu = \frac{m}{L}$$</td>
+                <td>كثافة طولية</td>
+                <td>قسمة عادية (كتلة على طول)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="group-container g6">
+        <div class="group-header">
+            <span class="group-title">6. الوحوش (4)</span>
+            <span class="group-desc">أشكال مميزة وضخمة</span>
+        </div>
+        <table>
+            <tr>
+                <td>$$I = \frac{P}{4\pi r^2}$$</td>
+                <td>تربيع عكسي</td>
+                <td>الوحيد اللي فيه 4 باي تحت (مسافة)</td>
+            </tr>
+            <tr>
+                <td>$$f_{obs} = f_s (\frac{v \pm v_o}{v \mp v_s})$$</td>
+                <td>دوبلر</td>
+                <td>القوس الكبير (بسط ومقام وإشارات)</td>
+            </tr>
+            <tr>
+                <td>$$\beta = 10 \log(\frac{I}{I_0})$$</td>
+                <td>الديسيبل</td>
+                <td>الوحيد اللي فيه Log</td>
+            </tr>
+            <tr>
+                <td>$$I = 2\pi^2 \rho v f^2 A^2$$</td>
+                <td>الشدة المفصلة</td>
+                <td>الوحيد اللي كله تربيعات (f² و A²)</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
